@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "cs-project-django-api.herokuapp.com",
     "127.0.0.1",
+    "localhost",
 ]
 
 
