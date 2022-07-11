@@ -46,6 +46,14 @@ optional = false
 python-versions = ">=3.8"
 
 [[package]]
+name = "psycopg2-binary"
+version = "2.9.3"
+description = "psycopg2 - Python-PostgreSQL Database Adapter"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "python-dateutil"
 version = "2.8.2"
 description = "Extensions to the standard Python datetime module"
@@ -83,13 +91,14 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "2f3d0b7125c4894195fec367a44a520b1d5c8bc15a06fe1cc1dedf7e791d2d39"
+content-hash = "12b925bf294ff67c9af5e6c3129850923738310ce2bc6250e9470ae4687fdc9a"
 
 [metadata.files]
 asgiref = []
 django = []
 faker = []
 numpy = []
+psycopg2-binary = []
 python-dateutil = []
 six = []
 sqlparse = []
