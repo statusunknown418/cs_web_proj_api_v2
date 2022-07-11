@@ -1,20 +1,24 @@
 # Api Repo
+
 This contains the source code for the randomized theater - spectators simulator
 
 ## Stack
+
 - Django 🤮
 - Python
 
 ## Local dev
 
 1. Clone the repo
-2. run: 
+2. run:
+
 ```
 $ brew install poetry # for macOS (if not installed before)
 $ poetry install # will setup local development env
 $ poetry run ./manage.py
 $ poetry run ./manage.py runserver
 ```
+
 3. Start playing with this rather simple api
 
 ## What's next
@@ -26,3 +30,7 @@ I (Alvaro) would like to say that despite the benefits this stack may have,
 it's not that nice to develop with it (at least for someone coming from web/mobile with JS/TS).
 
 PD: Sorry python lovers
+
+### Final Notes
+
+- If the [Frontend app](https://github.com/AlvaroAquijeDiaz/cs_project_nextjs_app) crashes or shows errors the simplest explanation is that the Heroku dyno configured for this project exceeded the available quota 😂 I do not plan on paying any extra.
