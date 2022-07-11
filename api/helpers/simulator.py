@@ -1,23 +1,9 @@
 import numpy as np
-from api.helpers.Movie import Movie
 from api.helpers.Person import Person
 from api.helpers.Theater import Theater
-from faker import Faker
-
-# Very useful library heavily used in Web Development (my area of expertise with Typescript) to simulate random real data
-fake = Faker()
-
-# Simulate a populated theater
-theater = Theater(Movie("The Matrix", "Wachowski", 1999, 18), 10)
-
-spectators = [Person(name=fake.name(),
-                     age=fake.random_int(18, 60),
-                     available_cash=fake.random_int(100, 1000)) for _ in range(np.random.randint(10, 100))]
-
-messages = []
 
 
-def simulate_spectator_arriving(theater: Theater, spectator: Person):
+def simulate_spectator_arriving(theater: Theater, spectator: Person, messages: list):
     if theater.current_movie.minimum_age > spectator.age:
         messages.append(
             f"{spectator.name} is too young to watch {theater.current_movie}")
@@ -33,18 +19,18 @@ def simulate_spectator_arriving(theater: Theater, spectator: Person):
         return
 
 
-def simulate_spectator_taking_random_seat(theater: Theater, spectator: Person):
+def simulate_spectator_taking_random_seat(theater: Theater, spectator: Person, messages: list):
     # Get a random seat
     row = theater.seats.shape[0]
     col = theater.seats.shape[1]
-    seat = (fake.random_int(0, row - 1), fake.random_int(0, col - 1))
+    seat = (np.random.randint(0, row - 1), np.random.randint(0, col - 1))
 
     # Check if seat is available
     if theater.seats[seat] == True:
         messages.append(
             f"Another spectator is already here ({seat}), looking for another seat")
 
-        simulate_spectator_arriving(theater, spectator)
+        simulate_spectator_arriving(theater, spectator, messages)
         return
 
     theater.seats[seat] = True
@@ -52,11 +38,13 @@ def simulate_spectator_taking_random_seat(theater: Theater, spectator: Person):
     messages.append(f"{spectator.name} has bought a seat at {seat}")
 
 
-def main():
-    for spectator in spectators:
-        simulate_spectator_arriving(theater, spectator)
-        simulate_spectator_taking_random_seat(theater, spectator)
+def main(spectators, theater, messages_arr):
+    for person in spectators:
+        simulate_spectator_arriving(
+            spectator=person, theater=theater, messages=messages_arr)
+        simulate_spectator_taking_random_seat(
+            theater, person, messages=messages_arr)
 
     return {
         "simulation": theater.get_distribution_of_seats().tolist(),
-        "log": messages}
+        "log": messages_arr}
