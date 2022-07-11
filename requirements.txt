@@ -1,8 +1,55 @@
-asgiref==3.5.2; python_version >= "3.8"
-django==4.0.6; python_version >= "3.8"
-faker==13.15.0; python_version >= "3.6"
-numpy==1.23.1; python_version >= "3.8"
-python-dateutil==2.8.2; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.6"
-six==1.16.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.6"
-sqlparse==0.4.2; python_version >= "3.8"
-tzdata==2022.1; sys_platform == "win32" and python_version >= "3.8"
+asgiref==3.5.2
+autopep8==1.6.0
+CacheControl==0.12.11
+cachy==0.3.0
+certifi==2022.5.18.1
+charset-normalizer==2.0.12
+cleo==0.8.1
+clikit==0.6.2
+crashtest==0.3.1
+cycler==0.11.0
+distlib==0.3.4
+Django==4.0.6
+et-xmlfile==1.1.0
+Faker==13.11.1
+filelock==3.7.0
+fonttools==4.31.2
+greenlet==1.1.2
+gunicorn==20.1.0
+html5lib==1.1
+idna==3.3
+importlib-metadata==4.11.4
+keyring==23.5.1
+kiwisolver==1.4.2
+lockfile==0.12.2
+matplotlib==3.5.1
+msgpack==1.0.3
+numpy==1.22.3
+openpyxl==3.0.9
+packaging==20.9
+pandas==1.4.2
+pastel==0.2.1
+pexpect==4.8.0
+Pillow==9.1.0
+pkginfo==1.8.2
+platformdirs==2.5.2
+poetry==1.1.13
+poetry-core==1.0.8
+ptyprocess==0.7.0
+pycodestyle==2.8.0
+pylev==1.4.0
+pynvim==0.4.3
+pyparsing==3.0.7
+python-dateutil==2.8.2
+pytz==2022.1
+requests==2.27.1
+requests-toolbelt==0.9.1
+shellingham==1.4.0
+six==1.16.0
+sqlparse==0.4.2
+toml==0.10.2
+tomlkit==0.10.2
+urllib3==1.26.9
+virtualenv==20.14.1
+webencodings==0.5.1
+zipp==3.8.0
